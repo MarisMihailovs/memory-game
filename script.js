@@ -2,7 +2,8 @@ const btnStart = document.getElementById('StartGame');
 const resultsTable = document.querySelector('.hallOfFame');
 const gameGrid = document.querySelector('.grid');
 
-let gridCards = [];
+let gridofCards = [];
+let card = {};
 let resultTable = [];
 let result = {};
 
