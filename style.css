@@ -81,7 +81,7 @@ body {
 
 .grid {
     width: 600px;
-    height: 80vh;
+    height: 600px;
     margin: auto;
     display: none;
     background-color: #71767a;
@@ -90,7 +90,12 @@ body {
     backdrop-filter: blur(2px);
     flex-wrap: wrap;
     align-items: center;
+    align-content: center;
     justify-content: center;
+}
+
+td {
+    user-select: none;
 }
 
 .card {
