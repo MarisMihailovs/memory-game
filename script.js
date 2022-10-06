@@ -1,7 +1,7 @@
 const btnStart = document.getElementById('StartGame');
-const resultsTable = document.querySelector('.hallOfFame');
+const resultsTable = document.querySelector('.Results');
 const gameGrid = document.querySelector('.grid');
-const countDown = document.getElementById('countDown');
+const countdown = document.getElementById('countdown-page');
 
 let gridofCards = [];
 let card = {};
@@ -11,8 +11,8 @@ let result = {};
 
 function launchGame() {
     resultsTable.style.display = "none";
-    gameGrid.style.display = "flex";
-    countDown.setAttribute.hidden = false;
+    btnStart.style.display = "none";
+    countdown.style.display = "flex";
 }
 
 btnStart.addEventListener("click", launchGame);

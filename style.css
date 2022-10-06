@@ -25,25 +25,19 @@ body {
 }
 
 .logo {
-    width: 90vw;
-    height: 10vh;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-inline: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: fixed;
+    right: 50px;
+    top: 25px;
 }
 
 .logo img {
     width: 14rem;
     height: 3.5rem;
-    margin: 15px;
 }
 
-.hallOfFame {
-    width: 90vw;
-    height: 80vh;
+.gameArea {
+    width: 100vw;
+    height: 100vh;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -69,6 +63,7 @@ body {
     height: 50px;
     font-size: larger;
     font-family: 'Gemunu Libre', sans-serif;
+    margin-bottom: 50px;
     border-color: #fff;
     border-radius: 5px;
     text-transform: capitalize;
@@ -77,6 +72,18 @@ body {
 #StartGame:hover {
     color: rgb(144, 129, 221);
 }
+
+.countdown {
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    font-size: 150px;
+    user-select: none;
+}
+
 
 
 .grid {
@@ -92,10 +99,6 @@ body {
     align-items: center;
     align-content: center;
     justify-content: center;
-}
-
-td {
-    user-select: none;
 }
 
 .card {
