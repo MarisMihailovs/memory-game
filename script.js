@@ -29,6 +29,11 @@ function countdownStart() {
     setTimeout(() => {
         countdownTimer.textContent = 'GO!';
     }, 3000);
+    setTimeout(() => {
+        countdown.hidden = true;
+        gameGrid.style.display = "flex";
+    }, 3500);
+
 }
 
 
