@@ -25,12 +25,14 @@ body {
 }
 
 .logo {
+    user-select: none;
     position: fixed;
     right: 50px;
     top: 25px;
 }
 
 .logo img {
+    user-select: none;
     width: 14rem;
     height: 3.5rem;
 }
@@ -74,16 +76,19 @@ body {
 }
 
 .countdown {
-    display: none;
-    align-items: center;
-    justify-content: space-around;
-    width: 100vw;
-    height: 100vh;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
     margin: auto;
     font-size: 150px;
     user-select: none;
 }
 
+.countdown h1 {
+    text-align: center;
+}
 
 
 .grid {
