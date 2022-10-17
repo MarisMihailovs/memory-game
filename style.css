@@ -120,9 +120,15 @@ body {
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
-.card:hover {
+.hoverCard {
     box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
     transform: scale(1.05);
+}
+
+.selected {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
 }
 
 @keyframes gridIn {
