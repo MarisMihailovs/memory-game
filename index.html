@@ -12,28 +12,56 @@
 
 <body>
     <div class="logo" alt="Signtech logo"><img src="images/SignTech_v13_BW.png" alt=""></div>
-    <container class="gameArea">
+    <container class="Game">
         <div class="Results">
         </div>
         <button id="StartGame">Start new game</button>
         <!-- game grid -->
-        <container class="grid">
-            <div class="card" id="card1"></div>
-            <div class="card" id="card2"></div>
-            <div class="card" id="card3"></div>
-            <div class="card" id="card4"></div>
-            <div class="card" id="card5"></div>
-            <div class="card" id="card6"></div>
-            <div class="card" id="card7"></div>
-            <div class="card" id="card8"></div>
-            <div class="card" id="card9"></div>
+        <container class="gameArea">
+            <container class="grid">
+                <div class="flipContainer">
+                    <div class="cardFront face" id="cardFront1"></div>
+                    <div class="cardBack face" id="cardBack1"></div>
+                </div>
+                <div class="flipContainer">
+                    <div class="cardFront face" id="cardFront2"></div>
+                    <div class="cardBack face" id="cardBack2"></div>
+                </div>
+                <div class="flipContainer">
+                    <div class="cardFront face" id="cardFront3"></div>
+                    <div class="cardBack face" id="cardBack3"></div>
+                </div>
+                <div class="flipContainer">
+                    <div class="cardFront face" id="cardFront4"></div>
+                    <div class="cardBack face" id="cardBack4"></div>
+                </div>
+                <div class="flipContainer">
+                    <div class="cardFront face" id="cardFront5"></div>
+                    <div class="cardBack face" id="cardBack5"></div>
+                </div>
+                <div class="flipContainer">
+                    <div class="cardFront face" id="cardFront6"></div>
+                    <div class="cardBack face" id="cardBack6"></div>
+                </div>
+                <div class="flipContainer">
+                    <div class="cardFront face" id="cardFront7"></div>
+                    <div class="cardBack face" id="cardBack7"></div>
+                </div>
+                <div class="flipContainer">
+                    <div class="cardFront face" id="cardFront8"></div>
+                    <div class="cardBack face" id="cardBack8"></div>
+                </div>
+                <div class="flipContainer">
+                    <div class="cardFront face" id="cardFront9"></div>
+                    <div class="cardBack face" id="cardBack9"></div>
+                </div>
+            </container>
         </container>
         <!-- countdown page -->
         <div class="countdown" id="countdown-page" hidden>
             <h1 id="countdown-timer"></h1>
         </div>
     </container>
-
     <script src="script.js"></script>
 </body>
 

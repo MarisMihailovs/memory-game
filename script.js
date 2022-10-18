@@ -1,12 +1,13 @@
 const btnStart = document.getElementById('StartGame');
 const resultsTable = document.querySelector('.Results');
-const gameGrid = document.querySelector('.grid');
+const gameArea = document.querySelector('.gameArea');
+const grid = document.querySelector('.grid');
 const countdown = document.getElementById('countdown-page');
 const countdownTimer = document.getElementById('countdown-timer');
-const cardGrid = document.querySelectorAll(".card");
+const cards = document.querySelectorAll(".flipContainer");
+
 
 let gridofCards = [];
-let card = {};
 let resultTable = [];
 let result = {};
 
@@ -19,19 +20,17 @@ function launchGame() {
 }
 
 function hoverCard() {
-    console.log(this, "over");
+
     this.classList.add("hoverCard");
 }
 
 function outCard() {
-    console.log(this, "out");
+
     this.classList.remove("hoverCard");
 }
 
 function selectCard() {
-    console.log(this);
     this.classList.toggle("selected");
-    console.log(this.classList);
 }
 
 
@@ -49,13 +48,14 @@ function countdownStart() {
     }, 3000);
     setTimeout(() => {
         countdown.hidden = true;
-        gameGrid.style.display = "flex";
+        gameArea.style.display = "inline";
+        grid.style.display = "flex";
     }, 3500);
 
 }
 
 
 btnStart.addEventListener("click", launchGame);
-cardGrid.forEach(cardGrid => cardGrid.addEventListener("click", selectCard));
-cardGrid.forEach(cardGrid => cardGrid.addEventListener("mouseover", hoverCard));
-cardGrid.forEach(cardGrid => cardGrid.addEventListener("mouseleave", outCard));
+cards.forEach(cards => cards.addEventListener("click", selectCard));
+cards.forEach(cards => cards.addEventListener("mouseover", hoverCard));
+cards.forEach(cards => cards.addEventListener("mouseleave", outCard));
