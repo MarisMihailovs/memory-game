@@ -8,23 +8,110 @@ const cards = document.querySelectorAll(".flipContainer");
 const cardsBack = document.querySelectorAll(".cardBack");
 
 let gridofCards = [
-    "images/tiles/Barco.jpg",
-    "images/tiles/Evoko.jpg",
-    "images/tiles/JOAN.jpg",
-    "images/tiles/Logitech.jpg",
-    "images/tiles/MB.jpg",
-    "images/tiles/MI.jpg",
-    "images/tiles/owllabs.jpg",
-    "images/tiles/samsung.jpg",
-    "images/tiles/Barco.jpg",
-    "images/tiles/Evoko.jpg",
-    "images/tiles/JOAN.jpg",
-    "images/tiles/Logitech.jpg",
-    "images/tiles/MB.jpg",
-    "images/tiles/MI.jpg",
-    "images/tiles/owllabs.jpg",
-    "images/tiles/samsung.jpg"
+    {
+        "index": 0,
+        "image": "images/tiles/Barco.jpg",
+        "state": "closed",
+        "guessed": false,
+
+    },
+    {
+        "index": 1,
+        "image": "images/tiles/Evoko.jpg",
+        "state": "closed",
+        "guessed": false,
+    },
+    {
+        "index": 2,
+        "image": "images/tiles/JOAN.jpg",
+        "state": "closed",
+        "guessed": false,
+    },
+    {
+        "index": 3,
+        "image": "images/tiles/Logitech.jpg",
+        "state": "closed",
+        "guessed": false,
+    },
+    {
+        "index": 4,
+        "image": "images/tiles/MB.jpg",
+        "state": "closed",
+        "guessed": false,
+    },
+    {
+        "index": 5,
+        "image": "images/tiles/MI.jpg",
+        "state": "closed",
+        "guessed": false,
+    },
+    {
+        "index": 6,
+        "image": "images/tiles/owllabs.jpg",
+        "state": "closed",
+        "guessed": false,
+    },
+    {
+        "index": 7,
+        "image": "images/tiles/samsung.jpg",
+        "state": "closed",
+        "guessed": false,
+    },
+    {
+        "index": 8,
+        "image": "images/tiles/Barco.jpg",
+        "state": "closed",
+        "guessed": false,
+    },
+    {
+        "index": 9,
+        "image": "images/tiles/Evoko.jpg",
+        "state": "closed",
+        "guessed": false,
+    },
+    {
+        "index": 10,
+        "image": "images/tiles/JOAN.jpg",
+        "state": "closed",
+        "guessed": false,
+    },
+    {
+        "index": 11,
+        "image": "images/tiles/Logitech.jpg",
+        "state": "closed",
+        "guessed": false,
+    },
+    {
+        "index": 12,
+        "image": "images/tiles/MB.jpg",
+        "state": "closed",
+        "guessed": false,
+    },
+    {
+        "index": 13,
+        "image": "images/tiles/MI.jpg",
+        "state": "closed",
+        "guessed": false,
+    },
+    {
+        "index": 14,
+        "image": "images/tiles/owllabs.jpg",
+        "state": "closed",
+        "guessed": false,
+    },
+    {
+        "index": 15,
+        "image": "images/tiles/samsung.jpg",
+        "state": "closed",
+        "guessed": false,
+    },
 ];
+
+let cardsOpen = 0;
+let card1 = {};
+let card2 = {};
+let card1Index;
+let card2Index;
 
 let resultTable = [];
 let result = {};
@@ -48,13 +135,64 @@ function outCard() {
 }
 
 function selectCard() {
-    this.classList.toggle("selected");
+    if (!this.classList.contains("selected")) {
+        console.log(cards);
+        console.log(gridofCards);
+        cardsOpen++;
+        console.log("cardsOpen selected", cardsOpen);
+        if (cardsOpen === 1) {
+            card1Index = Array.from(this.parentElement.children).indexOf(this);
+            if (!gridofCards[card1Index].guessed) {
+                this.classList.toggle("selected");
+                gridofCards[card1Index].state = "open";
+            }
+            card1 = gridofCards[card1Index];
+        };
+
+        if (cardsOpen === 2) {
+            card2Index = Array.from(this.parentElement.children).indexOf(this);
+            if (!gridofCards[card2Index].guessed) {
+                this.classList.toggle("selected");
+                gridofCards[card2Index].state = "open";
+            }
+            card2 = gridofCards[card2Index];
+            cardsOpen = 2;
+            console.log(cardsOpen)
+            checkCard();
+        };
+    }
 }
+
+
+
+
+function checkCard() {
+    if (card1.image === card2.image) {
+        gridofCards[card1Index].guessed = true;
+        gridofCards[card2Index].guessed = true;
+        cardsOpen = 0;
+    }
+    else {
+        cardsOpen = 3;
+        setTimeout(() => {
+            for (let i = 0; i < cards.length; i++) {
+                if (gridofCards[i].guessed === false) {
+                    cards[i].classList.remove('selected');
+                    gridofCards[i].state = "closed";
+                }
+
+            }
+            cardsOpen = 0;
+        }, 2000);
+    }
+}
+
 
 function fillCards() {
     shuffle(gridofCards);
     cardsBack.forEach((element, index) => {
-        element.style.backgroundImage = `url(${gridofCards[index]})`;
+        element.style.backgroundImage = `url(${gridofCards[index].image})`;
+
     })
 }
 
