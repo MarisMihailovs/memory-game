@@ -214,7 +214,6 @@ function countdownStart() {
         gameArea.style.display = "inline";
         grid.style.display = "flex";
     }, 3500);
-
 }
 
 
