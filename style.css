@@ -178,6 +178,12 @@ body {
     transform: rotateY(360deg);
 }
 
+.hoverCard {
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    transform: scale(1.05);
+}
+
+
 @keyframes gridIn {
     0% {
         transform: scale(0.5);
