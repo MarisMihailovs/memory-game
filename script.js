@@ -113,6 +113,7 @@ let card2 = {};
 let card1Index;
 let card2Index;
 
+let playerGuessCount = 0;
 let resultTable = [];
 let result = {};
 
@@ -136,10 +137,7 @@ function outCard() {
 
 function selectCard() {
     if (!this.classList.contains("selected")) {
-        console.log(cards);
-        console.log(gridofCards);
         cardsOpen++;
-        console.log("cardsOpen selected", cardsOpen);
         if (cardsOpen === 1) {
             card1Index = Array.from(this.parentElement.children).indexOf(this);
             if (!gridofCards[card1Index].guessed) {
@@ -157,13 +155,17 @@ function selectCard() {
             }
             card2 = gridofCards[card2Index];
             cardsOpen = 2;
-            console.log(cardsOpen)
             checkCard();
+            checkIfWon();
         };
     }
 }
 
-
+function checkIfWon() {
+    if (playerGuessCount === 16) {
+        console.log("You won!")
+    }
+}
 
 
 function checkCard() {
@@ -171,6 +173,7 @@ function checkCard() {
         gridofCards[card1Index].guessed = true;
         gridofCards[card2Index].guessed = true;
         cardsOpen = 0;
+        playerGuessCount = playerGuessCount + 2;
     }
     else {
         cardsOpen = 3;
