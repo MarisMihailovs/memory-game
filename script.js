@@ -1,3 +1,4 @@
+const gameScreen = document.getElementsByTagName("BODY")[0];
 const btnStart = document.getElementById('StartGame');
 const resultsTable = document.querySelector('.Results');
 const gameArea = document.querySelector('.gameArea');
@@ -6,6 +7,8 @@ const countdown = document.getElementById('countdown-page');
 const countdownTimer = document.getElementById('countdown-timer');
 const cards = document.querySelectorAll(".flipContainer");
 const cardsBack = document.querySelectorAll(".cardBack");
+const time = document.querySelector('.time');
+const fullscreenBtn = document.querySelector('.fullscreen');
 
 let gridofCards = [
     {
@@ -115,7 +118,65 @@ let card2Index;
 
 let playerGuessCount = 0;
 let resultTable = [];
+let timePlayed;
+let timer;
 let result = {};
+
+
+let fullscreen = false;
+
+//toggle fullscreen
+function toggleFullscreen() {
+    !fullscreen ? openFullscreen(gameScreen) : closeFullscreen();
+    fullscreen = !fullscreen;
+}
+
+function openFullscreen(elem) {
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+    }
+    gameScreen.classList.add('game-fullscreen');
+}
+
+/* Close fullscreen */
+function closeFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) { /* Safari */
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { /* IE11 */
+        document.msExitFullscreen();
+    }
+    gameScreen.classList.remove('game-fullscreen');
+}
+
+//stop timer and process results
+function checkTime() {
+    if (playerGuessCount === 16) {
+        clearInterval(timer);
+    }
+}
+
+// add tenth of a second to timePlayed
+function addTime() {
+    timePlayed += 0.1;
+    time.textContent = `${timePlayed.toFixed(1)}`
+    checkTime();
+}
+
+
+
+// start timer when game starts
+function startTimer() {
+    // reset times
+    timePlayed = 0;
+    timer = setInterval(addTime, 100);
+}
+
 
 
 function launchGame() {
@@ -212,6 +273,9 @@ function countdownStart() {
         countdownTimer.textContent = 'GO!';
     }, 3000);
     setTimeout(() => {
+        startTimer();
+    }, 3499);
+    setTimeout(() => {
         countdown.hidden = true;
         fillCards();
         gameArea.style.display = "inline";
@@ -224,3 +288,4 @@ btnStart.addEventListener("click", launchGame);
 cards.forEach(cards => cards.addEventListener("click", selectCard));
 cards.forEach(cards => cards.addEventListener("mouseover", hoverCard));
 cards.forEach(cards => cards.addEventListener("mouseleave", outCard));
+fullscreenBtn.addEventListener('click', toggleFullscreen);
