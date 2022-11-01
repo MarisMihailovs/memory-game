@@ -407,7 +407,7 @@ btnStart.addEventListener("click", launchGame);
 cards.forEach(cards => cards.addEventListener("click", selectCard));
 cards.forEach(cards => cards.addEventListener("mouseover", hoverCard));
 cards.forEach(cards => cards.addEventListener("mouseleave", outCard));
-fullscreenBtn.addEventListener('click', toggleFullscreen);
+// fullscreenBtn.addEventListener('click', toggleFullscreen);
 highScoresBtn.addEventListener('click', showHighScores);
 playAgainBtn.addEventListener('click', playAgain);
 bookmarkForm.addEventListener('submit', storeResult);
