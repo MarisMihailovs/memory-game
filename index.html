@@ -21,6 +21,16 @@
     </div>
     <container class="Game">
         <div class="Results">
+            <h3></h3>
+            <h3></h3>
+            <h3></h3>
+            <h3></h3>
+            <h3></h3>
+            <h3></h3>
+            <h3></h3>
+            <h3></h3>
+            <h3></h3>
+            <h3></h3>
         </div>
         <button id="StartGame">Start new game</button>
         <!-- game grid -->
@@ -92,17 +102,44 @@
                 </div>
             </container>
             <div class="timer">
+
                 <span>Your time is : </Span>
                 <span class="time"></span>
                 <span class="time">s</Span>
+
             </div>
+
         </container>
         <!-- countdown page -->
         <div class="countdown" id="countdown-page" hidden>
             <h1 id="countdown-timer"></h1>
         </div>
+        <!-- modal for high-score -->
+        <div class="modal-container">
+            <div class="modal">
+                <div class="resultTime">
+                    <h3 id="resultTime"></h3>
+                </div>
+                <form id="bookmark-form" hidden>
+                    <div class="form-group">
+                        <label for="player-name" class="form-label">Player name</label>
+                        <input type="text" class="form-input" id="player-Name">
+                    </div>
+                    <div class="center">
+                        <button type="submit">Save</button>
+                    </div>
+                </form>
+                <div class="optionBtns">
+                    <div id="highScoresBtn">
+                        <span>High Scores</span>
+                    </div>
+                    <div id="playAgainBtn">
+                        <span>Play again?</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </container>
-
     <script src="shuffle.js"></script>
     <script src="script.js"></script>
 </body>

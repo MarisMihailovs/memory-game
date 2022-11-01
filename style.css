@@ -70,7 +70,8 @@ body:fullscreen::backdrop {
     height: 70vh;
     margin: auto;
     display: flex;
-    align-items: stretch;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-around;
     background: hsl(0 0% var(--glass-lightness) / 10%);
     backdrop-filter: blur(2px);
@@ -78,19 +79,102 @@ body:fullscreen::backdrop {
     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
 
+h3 {
+    margin: 5px;
+}
+
 #StartGame {
-    width: 10rem;
-    height: 5rem;
+    width: 8rem;
+    height: 2rem;
     font-size: larger;
     font-family: 'Gemunu Libre', sans-serif;
     margin-bottom: 50px;
     border-color: #fff;
-    border-radius: 5px;
+    border-radius: 15px;
     text-transform: capitalize;
 }
 
-#StartGame:hover {
+#StartGame:hover,
+.optionBtns div:hover {
     font-weight: bold;
+}
+
+.modal-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.show-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    max-width: 95%;
+    height: 200px;
+    width: 500px;
+    animation: modalopen 1s;
+}
+
+.resultTime {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 4;
+}
+
+.form-group {
+    color: rgba(126, 126, 126, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.form-label {
+    margin: 5px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center button {
+    font-size: large;
+    color: white;
+    background-color: black;
+    font-family: 'Gemunu Libre', sans-serif;
+}
+
+.center button:hover {
+    font-weight: bold;
+}
+
+.optionBtns {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.optionBtns div {
+    background-color: black;
+    color: white;
+    padding: 1rem;
 }
 
 .countdown {
@@ -109,7 +193,7 @@ body:fullscreen::backdrop {
 }
 
 .timer {
-
+    user-select: none;
     text-align: center;
 }
 
@@ -232,4 +316,15 @@ body:fullscreen::backdrop {
         transform: scale(1);
     }
 
+}
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+    }
+
+    to {
+
+        opacity: 1;
+    }
 }
