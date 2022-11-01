@@ -13,7 +13,7 @@ const time = document.querySelector('.time');
 const highScoresBtn = document.getElementById('highScoresBtn');
 const playAgainBtn = document.getElementById('playAgainBtn');
 // fullscreen mode toggle
-const fullscreenBtn = document.querySelector('.fullscreen');
+// const fullscreenBtn = document.querySelector('.fullscreen');
 // results table node
 const resultsTable = document.querySelector('.Results');
 const player = document.querySelectorAll('h3');
