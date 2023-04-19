@@ -336,13 +336,8 @@ h3 {
         opacity: 1;
     }
 
-    75% {
-        scale: 1;
-        opacity: 0.75;
-    }
-
     100% {
-        scale: 1.2;
+        scale: 1.25;
         opacity: 0;
     }
 
