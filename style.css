@@ -100,14 +100,20 @@ h3 {
 }
 
 #StartGame {
-    width: 8rem;
-    height: 2rem;
+    width: 12rem;
+    height: 3rem;
     font-size: larger;
     font-family: 'Gemunu Libre', sans-serif;
     margin-bottom: 50px;
-    border-color: #fff;
-    border-radius: 15px;
+    color: white;
+    cursor: pointer;
+    border: 1px solid white;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 5px;
     text-transform: capitalize;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
 }
 
 #StartGame:hover,
@@ -202,6 +208,7 @@ h3 {
     margin: auto;
     font-size: 150px;
     user-select: none;
+    animation: countdownNr 1s ease-in none 3;
 }
 
 .countdown h1 {
@@ -318,6 +325,28 @@ h3 {
     transform: scale(1.05);
 }
 
+@keyframes countdownNr {
+    0% {
+        scale: 0.25;
+        opacity: 0.5;
+    }
+
+    50% {
+        scale: 0.75;
+        opacity: 1;
+    }
+
+    75% {
+        scale: 1;
+        opacity: 0.75;
+    }
+
+    100% {
+        scale: 1.2;
+        opacity: 0;
+    }
+
+}
 
 @keyframes gridIn {
     0% {
