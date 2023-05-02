@@ -118,7 +118,9 @@ h3 {
 
 #StartGame:hover,
 .optionBtns div:hover {
-    font-weight: bold;
+    color: rgb(0, 0, 0);
+    background: white;
+
 }
 
 .modal-container {
