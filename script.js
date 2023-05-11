@@ -17,6 +17,7 @@ const playAgainBtn = document.getElementById('playAgainBtn');
 // results table node
 const resultsTable = document.querySelector('.Results');
 const player = document.querySelectorAll('h3');
+const playerResult = document.querySelectorAll('h2');
 // highscore modal elements
 const modal = document.querySelector('.modal-container');
 const modalClose = document.getElementById('close-modal');
@@ -234,7 +235,8 @@ function showHighScores() {
     resultsTable.style.display = "flex";
     btnStart.style.display = "flex";
     highScoreArray.forEach((element, index) => {
-        player[index].innerText = `${element.Name} - ${element.Time}s`;
+        player[index].innerText = `${element.Name}`;
+        playerResult[index].innerText = `${element.Time}s`;
     });
 }
 

@@ -99,11 +99,29 @@ h3 {
     margin: 5px;
 }
 
+h2 {
+    margin: 5px;
+}
+
+h1 {
+    color: rgb(0, 0, 0);
+}
+
+.result {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: #71767a 2px solid;
+}
+
 #StartGame {
     width: 12rem;
     height: 3rem;
     font-size: larger;
     font-family: 'Gemunu Libre', sans-serif;
+    margin-top: 25px;
     margin-bottom: 50px;
     color: white;
     cursor: pointer;
