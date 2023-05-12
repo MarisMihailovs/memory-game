@@ -391,6 +391,29 @@ h1 {
 }
 
 @media only screen and (max-width: 600px) {
+    .logo img {
+
+        display: block;
+        user-select: none;
+        margin-top: 20px;
+        margin-inline: auto;
+
+    }
+
+    .logo {
+        position: static;
+        margin-inline: auto;
+    }
+
+    .Game {
+        margin-top: 0px;
+        margin-inline: auto;
+    }
+
+    .Results {
+        margin-top: 0px;
+    }
+
     .gameArea {
         width: 300px;
         height: 300px;
