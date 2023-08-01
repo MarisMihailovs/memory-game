@@ -66,8 +66,8 @@ body:fullscreen::backdrop {
 
 .logo img {
     user-select: none;
-    width: 14rem;
-    height: 3.5rem;
+    width: 8rem;
+    height: 8rem;
 }
 
 .Game {
@@ -259,7 +259,7 @@ h1 {
     height: 600px;
     margin: auto;
     display: none;
-    background-color: #71767a;
+    background-color: #dee4e5;
     border-radius: 20px;
     /* background: hsl(0 0% var(--glass-lightness) / 10%);
     backdrop-filter: blur(2px); */
@@ -312,7 +312,7 @@ h1 {
     width: 110px;
     height: 110px;
     border-radius: 15px;
-    background-image: url(images/logo_VW.png);
+    background-image: url(images/card_cover_rpp.png);
     background-size: contain;
     background-color: rgb(255, 255, 255);
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
