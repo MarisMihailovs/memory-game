@@ -28,7 +28,7 @@ const bookmarkForm = document.getElementById('bookmark-form');
 let gridofCards = [
     {
         "index": 0,
-        "image": "images/tiles/212A1872-1.jpg",
+        "image": "images/tiles/212A1972-1.jpg",
         "state": "closed",
         "guessed": false,
 
@@ -77,7 +77,7 @@ let gridofCards = [
     },
     {
         "index": 8,
-        "image": "images/tiles/212A1872-1.jpg",
+        "image": "images/tiles/212A1972-1.jpg",
         "state": "closed",
         "guessed": false,
     },
@@ -195,14 +195,14 @@ function showModal() {
     checkTime();
     modal.classList.add('show-modal');
     if (time.textContent < highScoreArray[9].Time) {
-        resultTime.innerText = `Congrats! Your time is ${time.textContent}s! You have made it to high-scores`;
+        resultTime.innerText = `Apsveicam! Tavs laiks ir ${time.textContent}s! Tev izdevās iekļūt starp labākajiem!`;
         bookmarkForm.hidden = false;
         playerName.focus();
     } else {
         highScoresBtn.style.display = "inline-block";
         playAgainBtn.style.display = "inline-block";
         bookmarkForm.hidden = true;
-        resultTime.innerText = `Your time is ${time.textContent}s! Good luck next time! Play again?`;
+        resultTime.innerText = `Tavs laiks ir ${time.textContent}s! Veiksmi nākamreiz! Mēģināt vēlreiz?`;
     }
 }
 
