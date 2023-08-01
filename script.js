@@ -246,16 +246,16 @@ function getHighScores() {
         console.log(highScoreArray);
     } else {
         highScoreArray = [
-            { Name: 'Player1', Time: 100 },
-            { Name: 'Player2', Time: 100 },
-            { Name: 'Player3', Time: 100 },
-            { Name: 'Player4', Time: 100 },
-            { Name: 'Player5', Time: 100 },
-            { Name: 'Player6', Time: 100 },
-            { Name: 'Player7', Time: 100 },
-            { Name: 'Player8', Time: 100 },
-            { Name: 'Player9', Time: 100 },
-            { Name: 'Player10', Time: 100 },
+            { Name: 'Spēlētājs1', Time: 100 },
+            { Name: 'Spēlētājs2', Time: 100 },
+            { Name: 'Spēlētājs3', Time: 100 },
+            { Name: 'Spēlētājs4', Time: 100 },
+            { Name: 'Spēlētājs5', Time: 100 },
+            { Name: 'Spēlētājs6', Time: 100 },
+            { Name: 'Spēlētājs7', Time: 100 },
+            { Name: 'Spēlētājs8', Time: 100 },
+            { Name: 'Spēlētājs9', Time: 100 },
+            { Name: 'Spēlētājs10', Time: 100 },
         ];
         highScoreArray.sort((e1, e2) => (e1.Time > e2.Time) ? 1 : (e1.Time < e2.Time) ? -1 : 0);
         localStorage.setItem('highScores', JSON.stringify(highScoreArray));
@@ -363,7 +363,7 @@ function countdownStart() {
         countdownTimer.textContent = '1';
     }, 2000);
     setTimeout(() => {
-        countdownTimer.textContent = 'GO!';
+        countdownTimer.textContent = 'Aiziet!';
     }, 3000);
     setTimeout(() => {
         startTimer();
