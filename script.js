@@ -13,7 +13,7 @@ const time = document.querySelector('.time');
 const highScoresBtn = document.getElementById('highScoresBtn');
 const playAgainBtn = document.getElementById('playAgainBtn');
 // fullscreen mode toggle
-// const fullscreenBtn = document.querySelector('.fullscreen');
+const fullscreenBtn = document.querySelector('.fullscreen');
 // results table node
 const resultsTable = document.querySelector('.Results');
 const player = document.querySelectorAll('h3');
@@ -409,7 +409,7 @@ btnStart.addEventListener("click", launchGame);
 cards.forEach(cards => cards.addEventListener("click", selectCard));
 cards.forEach(cards => cards.addEventListener("mouseover", hoverCard));
 cards.forEach(cards => cards.addEventListener("mouseleave", outCard));
-// fullscreenBtn.addEventListener('click', toggleFullscreen);
+fullscreenBtn.addEventListener('click', toggleFullscreen);
 highScoresBtn.addEventListener('click', showHighScores);
 playAgainBtn.addEventListener('click', playAgain);
 bookmarkForm.addEventListener('submit', storeResult);
