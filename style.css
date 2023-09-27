@@ -370,17 +370,17 @@ h1 {
 
 @keyframes countdownNr {
     0% {
-        scale: 0.25;
+
         opacity: 0.5;
     }
 
     50% {
-        scale: 0.75;
+
         opacity: 1;
     }
 
     100% {
-        scale: 1.25;
+
         opacity: 0;
     }
 
