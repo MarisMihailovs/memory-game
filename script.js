@@ -1,5 +1,6 @@
 const gameScreen = document.getElementsByTagName("BODY")[0];
 const btnStart = document.getElementById('StartGame');
+const btnHome = document.querySelector('.home');
 // countdown 
 const countdown = document.getElementById('countdown-page');
 const countdownTimer = document.getElementById('countdown-timer');
@@ -28,98 +29,99 @@ const bookmarkForm = document.getElementById('bookmark-form');
 let gridofCards = [
     {
         "index": 0,
-        "image": "images/tiles/212A1972-1.jpg",
+        "image": "images/tiles/combogesic_photo_2022.jpg",
         "state": "closed",
         "guessed": false,
 
     },
     {
         "index": 1,
-        "image": "images/tiles/212A1943-1.jpg",
+        "image": "images/tiles/Fervex_pieaugušajiem_iepakojums_taisni_NEW.jpg",
         "state": "closed",
         "guessed": false,
     },
     {
         "index": 2,
-        "image": "images/tiles/212A1949-1.jpg",
+        "image": "images/tiles/Isla_cassis_kastīte_sataisīta.jpg",
         "state": "closed",
         "guessed": false,
     },
     {
         "index": 3,
-        "image": "images/tiles/212A2002-1.jpg",
+        "image": "images/tiles/Isla_junior_kastīte_sataisīta.jpg",
         "state": "closed",
         "guessed": false,
     },
     {
         "index": 4,
-        "image": "images/tiles/212A2052-1.jpg",
+        "image": "images/tiles/Isla_medic_acut_kastīte_sataisīta.jpg",
         "state": "closed",
         "guessed": false,
     },
     {
         "index": 5,
-        "image": "images/tiles/212A2226.jpg",
+        "image": "images/tiles/Merz-Spezial_Dragees_elp.jpg",
         "state": "closed",
         "guessed": false,
     },
     {
         "index": 6,
-        "image": "images/tiles/12538268fd7b.jpg",
+        "image": "images/tiles/Prospan_Eff_Tabletes_65mg_elp.jpg",
         "state": "closed",
         "guessed": false,
     },
     {
         "index": 7,
-        "image": "images/tiles/auto-22-of-51.jpg",
+        "image": "images/tiles/Prospan_Sīrups100_ml_elp.jpg",
         "state": "closed",
         "guessed": false,
     },
     {
         "index": 8,
-        "image": "images/tiles/212A1972-1.jpg",
+        "image": "images/tiles/combogesic_photo_2022.jpg",
         "state": "closed",
         "guessed": false,
+
     },
     {
         "index": 9,
-        "image": "images/tiles/212A1943-1.jpg",
+        "image": "images/tiles/Fervex_pieaugušajiem_iepakojums_taisni_NEW.jpg",
         "state": "closed",
         "guessed": false,
     },
     {
         "index": 10,
-        "image": "images/tiles/212A1949-1.jpg",
+        "image": "images/tiles/Isla_cassis_kastīte_sataisīta.jpg",
         "state": "closed",
         "guessed": false,
     },
     {
         "index": 11,
-        "image": "images/tiles/212A2002-1.jpg",
+        "image": "images/tiles/Isla_junior_kastīte_sataisīta.jpg",
         "state": "closed",
         "guessed": false,
     },
     {
         "index": 12,
-        "image": "images/tiles/212A2052-1.jpg",
+        "image": "images/tiles/Isla_medic_acut_kastīte_sataisīta.jpg",
         "state": "closed",
         "guessed": false,
     },
     {
         "index": 13,
-        "image": "images/tiles/212A2226.jpg",
+        "image": "images/tiles/Merz-Spezial_Dragees_elp.jpg",
         "state": "closed",
         "guessed": false,
     },
     {
         "index": 14,
-        "image": "images/tiles/12538268fd7b.jpg",
+        "image": "images/tiles/Prospan_Eff_Tabletes_65mg_elp.jpg",
         "state": "closed",
         "guessed": false,
     },
     {
         "index": 15,
-        "image": "images/tiles/auto-22-of-51.jpg",
+        "image": "images/tiles/Prospan_Sīrups100_ml_elp.jpg",
         "state": "closed",
         "guessed": false,
     },
@@ -168,6 +170,7 @@ function closeFullscreen() {
     }
     gameScreen.classList.remove('game-fullscreen');
 }
+
 
 // add tenth of a second to timePlayed
 function addTime() {
@@ -229,6 +232,7 @@ function resetGameGrid() {
         playerGuessCount = 0;
     }
 }
+
 // read highScore table
 function showHighScores() {
     resetGameGrid();
@@ -266,12 +270,24 @@ function getHighScores() {
     showHighScores();
 }
 
+function removeGameGrid() {
+    clearInterval(timer);
+    cardsOpen = 0;
+    timePlayed = 0;
+    playerGuessCount = 0;
+    gameArea.style.display = "none";
+    grid.style.display = "none";
+}
 
 function playAgain() {
     resetGameGrid();
     launchGame();
 }
 
+async function home() {
+    await removeGameGrid();
+    await showHighScores();
+}
 
 function launchGame() {
     resultsTable.style.display = "none";
@@ -281,12 +297,10 @@ function launchGame() {
 }
 
 function hoverCard() {
-
     this.classList.add("hoverCard");
 }
 
 function outCard() {
-
     this.classList.remove("hoverCard");
 }
 
@@ -413,7 +427,7 @@ fullscreenBtn.addEventListener('click', toggleFullscreen);
 highScoresBtn.addEventListener('click', showHighScores);
 playAgainBtn.addEventListener('click', playAgain);
 bookmarkForm.addEventListener('submit', storeResult);
-
+btnHome.addEventListener('click', home);
 
 
 // get highScores on load
