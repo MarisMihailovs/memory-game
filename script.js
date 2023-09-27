@@ -275,6 +275,14 @@ function removeGameGrid() {
     cardsOpen = 0;
     timePlayed = 0;
     playerGuessCount = 0;
+    cards.forEach((element) => {
+        element.classList.remove("selected");
+    });
+
+    gridofCards.forEach((element) => {
+        element.guessed = false;
+        element.state = "closed";
+    });
     gameArea.style.display = "none";
     grid.style.display = "none";
 }
