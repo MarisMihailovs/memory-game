@@ -60,6 +60,18 @@ body:fullscreen::backdrop {
     cursor: pointer;
 }
 
+video {
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: #71767a;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
 .material-symbols-outlined {
     position: fixed;
     bottom: 10px;

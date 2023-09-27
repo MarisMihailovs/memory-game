@@ -1,6 +1,8 @@
 const gameScreen = document.getElementsByTagName("BODY")[0];
 const btnStart = document.getElementById('StartGame');
 const btnHome = document.querySelector('.home');
+const btnVideo = document.querySelector('.playVideo');
+const videoClip = document.querySelector('.video');
 // countdown 
 const countdown = document.getElementById('countdown-page');
 const countdownTimer = document.getElementById('countdown-timer');
@@ -171,6 +173,16 @@ function closeFullscreen() {
     gameScreen.classList.remove('game-fullscreen');
 }
 
+function playVideo() {
+    videoClip.style.display = 'flex';
+    videoClip.play();
+}
+
+function closeVideo() {
+    videoClip.pause();
+    videoClip.currentTime = 0;
+    videoClip.style.display = 'none';
+}
 
 // add tenth of a second to timePlayed
 function addTime() {
@@ -401,7 +413,6 @@ function countdownStart() {
 }
 
 function checkPlace(result) {
-
     for (let i = 0; i < highScoreArray.length; i++) {
         return result.Time < highScoreArray[i].Time;
     };
@@ -436,7 +447,8 @@ highScoresBtn.addEventListener('click', showHighScores);
 playAgainBtn.addEventListener('click', playAgain);
 bookmarkForm.addEventListener('submit', storeResult);
 btnHome.addEventListener('click', home);
-
+btnVideo.addEventListener('click', playVideo);
+videoClip.addEventListener('click', closeVideo);
 
 // get highScores on load
 getHighScores();
