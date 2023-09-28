@@ -444,7 +444,21 @@ h1 {
 }
 
 @media only screen and (max-width: 600px) {
+    .playVideo {
+        left: 10px;
+    }
 
+    .material-symbols-outlined {
+        right: 10px;
+    }
+
+    .home {
+        left: 10px;
+    }
+
+    .logo {
+        right: 10px;
+    }
 
     .countdown {
         top: 0px;
