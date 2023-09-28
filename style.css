@@ -364,7 +364,8 @@ h1 {
     width: 110px;
     height: 110px;
     border-radius: 15px;
-    background-image: url(images/pills_swix.svg);
+    background-image: url(images/swixx_logo.png);
+    background-position: center;
     background-size: contain;
     background-color: rgb(255, 255, 255);
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
